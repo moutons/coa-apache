@@ -2,5 +2,5 @@
 class coa-apache {
   class { '::coa-apache::config': } ->
   class { '::coa-apache::service': } ->
-  Class['ssh']
+  Class['coa-apache']
 }
