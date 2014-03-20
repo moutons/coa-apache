@@ -7,6 +7,7 @@ class coa-apache::config {
     group    => 'root',
     mode     => '0644',
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd.conf',
+    notify   => Class['coa-apache::service'],
   }
 
   # Main Server Configuration elements
@@ -16,6 +17,7 @@ class coa-apache::config {
     group    => 'root',
     mode     => '0644',
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-default.conf',
+    notify   => Class['coa-apache::service'],
   }
 
   # Apache Error Documents Declaration
@@ -25,6 +27,7 @@ class coa-apache::config {
     group    => 'root',
     mode     => '0644',
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-errordoc.conf',
+    notify   => Class['coa-apache::service'],
   }
 
   # Apache Server Info & Status Module Settings
@@ -34,6 +37,7 @@ class coa-apache::config {
     group    => 'root',
     mode     => '0644',
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-info.conf',
+    notify   => Class['coa-apache::service'],
   }
 
   # Apache Prefork/MPM Configuration Section
@@ -43,6 +47,7 @@ class coa-apache::config {
     group    => 'root',
     mode     => '0644',
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-mpm.conf',
+    notify   => Class['coa-apache::service'],
   }
 
   # "Placeholder" Vhosts setting
@@ -52,5 +57,6 @@ class coa-apache::config {
     group    => 'root',
     mode     => '0644',
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-vhosts.conf',
+    notify   => Class['coa-apache::service'],
   }
 }

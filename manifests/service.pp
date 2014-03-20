@@ -4,6 +4,6 @@ class coa-apache::service {
     ensure     => running,
     hasstatus  => true,
     hasrestart => true,
-    require    => Class['coa-apache::config'],
+    require    => Class[ ['coa-apache::config'], ['coa-apache::install'] ],
   }
 }
