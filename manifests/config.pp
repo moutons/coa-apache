@@ -1,7 +1,7 @@
 # CoA Apache configuration module
 class coa-apache::config {
   # Master HTTPD conf file
-  file { '/etc/httpd/conf/httpd.conf':
+  file { '/etc/httpd/conf.d/etc_httpd_conf_httpd.conf':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
@@ -23,7 +23,7 @@ class coa-apache::config {
   }
 
   # Apache Error Documents Declaration
-  file { '/etc/httpd/conf.d/errordoc.conf':
+  file { '/etc/httpd/conf.d/etc_httpd_conf_httpd-errordoc.conf':
     ensure   => present,
     owner    => 'root',
     group    => 'root',
@@ -34,7 +34,7 @@ class coa-apache::config {
   }
 
   # Apache Server Info & Status Module Settings
-  file { '/etc/httpd/conf.d/httpd-info.conf':
+  file { '/etc/httpd/conf.d/etc_httpd_conf_httpd-info.conf':
     ensure   => present,
     owner    => 'root',
     group    => 'root',
@@ -45,7 +45,7 @@ class coa-apache::config {
   }
 
   # Apache Prefork/MPM Configuration Section
-  file { '/etc/httpd/conf.d/mpm.conf':
+  file { '/etc/httpd/conf.d/etc_httpd_conf_httpd-mpm.conf':
     ensure   => present,
     owner    => 'root',
     group    => 'root',
@@ -56,7 +56,7 @@ class coa-apache::config {
   }
 
   # "Placeholder" Vhosts setting
-  file { '/etc/httpd/conf.d/vhosts.conf':
+  file { '/etc/httpd/conf.d/etc_httpd_conf_httpd-vhosts.conf':
     ensure   => present,
     owner    => 'root',
     group    => 'root',
