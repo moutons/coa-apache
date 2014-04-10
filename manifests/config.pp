@@ -1,7 +1,7 @@
 # CoA Apache configuration module
 class coa-apache::config {
   # Master HTTPD conf file
-  file { '/etc/httpd/conf.d/etc_httpd_conf_httpd.conf':
+  file { '/etc/httpd/conf/httpd.conf':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
