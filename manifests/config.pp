@@ -74,4 +74,13 @@ class coa-apache::config {
     source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-autoindex.conf',
     require  => Class['coa-apache::install'],
   }
+
+  file { '/etc/httpd/conf/mime.types':
+    ensure   => present,
+    owner    => 'root',
+    group    => 'root',
+    mode     => '0644',
+    source   => 'puppet:///modules/coa-apache/mime.types',
+    require  => Class['coa-apache::install'],
+  }
 }
