@@ -65,4 +65,12 @@ class coa-apache::config {
     require  => Class['coa-apache::install'],
     notify   => Class['coa-apache::service'],
   }
+
+  file { '/etc/httpd/conf/etc_httpd_conf_httpd-autoindex.conf':
+    ensure   => present,
+    owner    => 'root',
+    group    => 'root',
+    mode     => '0644',
+    source   => 'puppet:///modules/coa-apache/etc_httpd_conf_httpd-autoindex.conf',
+    require  => Class['coa-apache::install'],
 }
